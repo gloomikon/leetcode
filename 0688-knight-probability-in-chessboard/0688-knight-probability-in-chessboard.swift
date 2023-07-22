@@ -28,10 +28,6 @@ func knightProbability(_ n: Int, _ k: Int, _ row: Int, _ column: Int) -> Double 
 
         prevDP[row][column] = 1
 
-//        if isSafeIndex(row, column, for: n) {
-//            prevDP[row][column] = 1
-//        }
-
         for _ in 1...k {
             for i in 0..<n {
                 for j in 0..<n {
