@@ -1,6 +1,14 @@
 class Solution {
     func removeDuplicates(_ nums: inout [Int]) -> Int {
-        nums = Array(Set(nums)).sorted()
+        var i = 0
+        while i + 1 < nums.count {
+            if nums[i] == nums[i + 1] {
+                nums.remove(at: i + 1)
+            } else {
+                i += 1
+            }
+        }
+
         return nums.count
     }
 }
