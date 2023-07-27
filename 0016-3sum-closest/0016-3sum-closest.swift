@@ -18,11 +18,6 @@ class Solution {
                 } else {
                     r -= 1
                 }
-//                if diff > 0 {
-//                    l += 1
-//                } else {
-//                    r -= 1
-//                }
             }
         }
 
