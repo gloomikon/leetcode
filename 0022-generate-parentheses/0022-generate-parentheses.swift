@@ -1,6 +1,10 @@
 class Solution {
 
-    private var dp: [Int: [String]] = [0: [""]]
+    private var dp: [Int: [String]] = [
+        0: [""],
+        1: ["()"],
+        2: ["()()", "(())"]
+    ]
 
     func generateParenthesis(_ n: Int) -> [String] {
         if let parentheses = dp[n] {
