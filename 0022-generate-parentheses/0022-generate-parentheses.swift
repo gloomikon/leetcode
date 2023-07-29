@@ -7,9 +7,7 @@ class Solution {
     ]
 
     func generateParenthesis(_ n: Int) -> [String] {
-        if let parentheses = dp[n] {
-            return parentheses
-        }
+        if let parentheses = dp[n] { return parentheses }
         var result: [String] = []
 
         for i in 0..<n {
