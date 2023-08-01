@@ -16,12 +16,9 @@ class Solution {
 
         for i in 0..<m {
             for j in 0..<n {
-                if a[j] == b[i] {
-                    curr[j] = prev[safe: j - 1, 0] + 1
-                } else {
-                    curr[j] = max(curr[safe: j - 1, 0], prev[j])
-                }
-//                print(i, j, b[i], a[j], prev, curr)
+                curr[j] = a[j] == b[i] ?
+                prev[safe: j - 1, 0] + 1 :
+                max(curr[safe: j - 1, 0], prev[j])
             }
             prev = curr
         }
