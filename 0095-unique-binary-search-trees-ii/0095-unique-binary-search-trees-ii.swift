@@ -15,14 +15,25 @@
  */
 
 class Solution {
+
+    private struct DP: Hashable {
+        let lowerBound: Int
+        let upperBound: Int
+    }
+
     func generateTrees(_ n: Int) -> [TreeNode?] {
 
+        var dp: [DP: [TreeNode]] = [:]
+
         func generate(_ lowerBound: Int, _ upperBound: Int) -> [TreeNode?] {
-            if lowerBound == upperBound {
-                return [.init(lowerBound)]
-            }
             if lowerBound > upperBound {
                 return [nil]
+            }
+
+            let key = DP(lowerBound: lowerBound, upperBound: upperBound)
+
+            if let result = dp[key] {
+                return result
             }
 
             var res: [TreeNode] = []
@@ -34,6 +45,8 @@ class Solution {
                     }
                 }
             }
+
+            dp[key] = res
 
             return res
         }
