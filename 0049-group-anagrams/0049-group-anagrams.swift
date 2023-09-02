@@ -8,13 +8,14 @@ extension Collection where Element: Hashable {
 
 class Solution {
     func groupAnagrams(_ strs: [String]) -> [[String]] {
-        var groups: [Int: [String]] = [:]
+        let strs = strs.map { Array($0) }
+        var groups: [Int: [[Character]]] = [:]
         for str in strs {
             var arr = groups[str.occurrences.hashValue, default: []]
             arr.append(str)
             groups[str.occurrences.hashValue] = arr
         }
 
-        return groups.map { _, value in value }
+        return groups.map { _, group in group.map { String($0) }}
     }
 }
